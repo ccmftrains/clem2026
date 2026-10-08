@@ -56,7 +56,15 @@ p{margin:0}
 
 /* section bar */
 .bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--paper);border-bottom:1px solid var(--rule);margin-inline:-20px;padding:10px 20px}
-.bar nav{display:flex;gap:6px;overflow-x:auto;scrollbar-width:thin}
+.bar{display:flex;align-items:center;gap:10px}
+.bar nav{display:flex;gap:6px;overflow-x:auto;scrollbar-width:thin;flex:1;min-width:0}
+.theme-btn{flex:none;display:inline-flex;align-items:center;gap:6px;font:600 var(--t-small) var(--display);text-transform:uppercase;letter-spacing:.04em;color:var(--ink);background:var(--card);border:1px solid var(--rule);border-radius:3px;padding:6px 10px;cursor:pointer}
+.theme-btn:hover{border-color:var(--accent);color:var(--accent)}
+.theme-btn svg{width:1.05em;height:1.05em;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.theme-btn .i-moon{display:none}
+.theme-btn.to-dark .i-moon{display:block}.theme-btn.to-dark .i-sun{display:none}
+.side .theme-btn{width:100%;justify-content:center;margin-bottom:14px}
+@media (max-width:520px){.bar .theme-txt{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}}
 .bar a{flex:none;font-size:var(--t-small);font-family:var(--display);font-weight:600;text-transform:uppercase;letter-spacing:.04em;text-decoration:none;color:var(--ink);padding:6px 12px;border:1px solid var(--rule);border-radius:3px;background:var(--card)}
 .bar a:hover{border-color:var(--accent);color:var(--accent)}
 
@@ -230,6 +238,7 @@ footer{margin-top:56px;padding-top:16px;border-top:2px solid var(--ink);color:va
 .sec-head{flex-wrap:wrap}
 @media print{
   .side{display:none!important}
+  .theme-btn{display:none!important}
   .shell{display:block}
   .print-only{display:inline}
   .credit a{color:var(--accent)!important;text-decoration:underline}
@@ -250,7 +259,7 @@ footer{margin-top:56px;padding-top:16px;border-top:2px solid var(--ink);color:va
 </style></head><body>
 
 <div class="shell">
-<aside class="side" aria-label="Table of contents"><div class="side-in"><a class="side-home" href="#top">Clem's York Primer<span>Fall 2026</span></a><ol><li data-sec="essentials"><a href="#essentials">The essentials</a><ul><li><a href="#new">New for October</a></li></ul></li><li data-sec="week"><a href="#week">The week at a glance</a><ul><li><a href="#future">Future York dates</a></li></ul></li><li data-sec="schedule"><a href="#schedule">Day-by-day schedule</a><ul><li><a href="#mon">Mon</a></li><li><a href="#tue">Tue</a></li><li><a href="#wed">Wed</a></li><li><a href="#thu">Thu</a></li><li><a href="#fri">Fri</a></li><li><a href="#sat">Sat</a></li></ul></li><li data-sec="talks"><a href="#talks">Seminars</a></li><li data-sec="layouts"><a href="#layouts">Layouts, clubs &amp; meetings</a><ul><li><a href="#on-display">Layouts on display</a></li><li><a href="#meetings">Club meetings</a></li></ul></li><li data-sec="fairgrounds"><a href="#fairgrounds">Finding your way</a><ul><li><a href="#map">Fairgrounds map</a></li><li><a href="#decoder">Hall decoder</a></li><li><a href="#services">Services</a></li></ul></li><li data-sec="getting-here"><a href="#getting-here">Getting here</a></li><li data-sec="rv"><a href="#rv">RV &amp; camping</a><ul><li><a href="#rv-off">Off the grounds</a></li></ul></li><li data-sec="rules"><a href="#rules">Rules, registration &amp; guests</a><ul><li><a href="#show-rules">Show rules</a></li><li><a href="#faq">Quick answers</a></li></ul></li><li data-sec="nearby"><a href="#nearby">Train trips</a><ul><li><a href="#openhouses">Open houses</a></li><li><a href="#roadtrips">Hi-Railers road trips</a></li></ul></li><li data-sec="family"><a href="#family">Family fun around York</a><ul><li><a href="#fam-visitor">Visitor information</a></li><li><a href="#fam-history">York County History Center</a></li><li><a href="#fam-museums">More museums</a></li><li><a href="#fam-parks">Parks and trails</a></li><li><a href="#fam-tours">Factory tours and outlets</a></li><li><a href="#fam-antiques">Antiques</a></li><li><a href="#fam-golf">Golf and performing arts</a></li><li><a href="#fam-eat">Where to eat</a></li></ul></li><li data-sec="stories"><a href="#stories">Stories</a><ul><li><a href="#president">President's message</a></li><li><a href="#report">Clem's Report</a></li></ul></li><li data-sec="reference"><a href="#reference">Reference</a><ul><li><a href="#contacts">Who to contact</a></li><li><a href="#attendance">Attendance</a></li><li><a href="#join">Join TCA</a></li><li><a href="#about">About the Primer</a></li></ul></li><li data-sec="clem"><a href="#clem">Our namesake</a></li></ol></div></aside>
+<aside class="side" aria-label="Table of contents"><div class="side-in"><a class="side-home" href="#top">Clem's York Primer<span>Fall 2026</span></a><button type="button" class="theme-btn" aria-label="Switch color mode"><svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 1.5v3M12 19.5v3M1.5 12h3M19.5 12h3M4.6 4.6l2.1 2.1M17.3 17.3l2.1 2.1M4.6 19.4l2.1-2.1M17.3 6.7l2.1-2.1"/></svg><svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z"/></svg><span class="theme-txt">Light mode</span></button><ol><li data-sec="essentials"><a href="#essentials">The essentials</a><ul><li><a href="#new">New for October</a></li></ul></li><li data-sec="week"><a href="#week">The week at a glance</a><ul><li><a href="#future">Future York dates</a></li></ul></li><li data-sec="schedule"><a href="#schedule">Day-by-day schedule</a><ul><li><a href="#mon">Mon</a></li><li><a href="#tue">Tue</a></li><li><a href="#wed">Wed</a></li><li><a href="#thu">Thu</a></li><li><a href="#fri">Fri</a></li><li><a href="#sat">Sat</a></li></ul></li><li data-sec="talks"><a href="#talks">Seminars</a></li><li data-sec="layouts"><a href="#layouts">Layouts, clubs &amp; meetings</a><ul><li><a href="#on-display">Layouts on display</a></li><li><a href="#meetings">Club meetings</a></li></ul></li><li data-sec="fairgrounds"><a href="#fairgrounds">Finding your way</a><ul><li><a href="#map">Fairgrounds map</a></li><li><a href="#decoder">Hall decoder</a></li><li><a href="#services">Services</a></li></ul></li><li data-sec="getting-here"><a href="#getting-here">Getting here</a></li><li data-sec="rv"><a href="#rv">RV &amp; camping</a><ul><li><a href="#rv-off">Off the grounds</a></li></ul></li><li data-sec="rules"><a href="#rules">Rules, registration &amp; guests</a><ul><li><a href="#show-rules">Show rules</a></li><li><a href="#faq">Quick answers</a></li></ul></li><li data-sec="nearby"><a href="#nearby">Train trips</a><ul><li><a href="#openhouses">Open houses</a></li><li><a href="#roadtrips">Hi-Railers road trips</a></li></ul></li><li data-sec="family"><a href="#family">Family fun around York</a><ul><li><a href="#fam-visitor">Visitor information</a></li><li><a href="#fam-history">York County History Center</a></li><li><a href="#fam-museums">More museums</a></li><li><a href="#fam-parks">Parks and trails</a></li><li><a href="#fam-tours">Factory tours and outlets</a></li><li><a href="#fam-antiques">Antiques</a></li><li><a href="#fam-golf">Golf and performing arts</a></li><li><a href="#fam-eat">Where to eat</a></li></ul></li><li data-sec="stories"><a href="#stories">Stories</a><ul><li><a href="#president">President's message</a></li><li><a href="#report">Clem's Report</a></li></ul></li><li data-sec="reference"><a href="#reference">Reference</a><ul><li><a href="#contacts">Who to contact</a></li><li><a href="#attendance">Attendance</a></li><li><a href="#join">Join TCA</a></li><li><a href="#about">About the Primer</a></li></ul></li><li data-sec="clem"><a href="#clem">Our namesake</a></li></ol></div></aside>
 <div class="wrap" id="top">
 
 <header class="mast">
@@ -275,7 +284,7 @@ footer{margin-top:56px;padding-top:16px;border-top:2px solid var(--ink);color:va
 
 <div class="bar"><nav aria-label="Sections">
   <a href="#contents">Contents</a><a href="#essentials">Essentials</a><a href="#week">Week</a><a href="#schedule">Schedule</a><a href="#talks">Seminars</a><a href="#layouts">Layouts &amp; Groups</a><a href="#fairgrounds">Fairgrounds</a><a href="#getting-here">Getting here</a><a href="#rv">RV &amp; camping</a><a href="#rules">Rules &amp; registration</a><a href="#nearby">Train trips</a><a href="#family">Family fun</a><a href="#stories">Stories</a><a href="#reference">Reference</a><a href="#clem">Clem</a>
-</nav></div>
+</nav><button type="button" class="theme-btn" aria-label="Switch color mode"><svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 1.5v3M12 19.5v3M1.5 12h3M19.5 12h3M4.6 4.6l2.1 2.1M17.3 17.3l2.1 2.1M4.6 19.4l2.1-2.1M17.3 6.7l2.1-2.1"/></svg><svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z"/></svg><span class="theme-txt">Light mode</span></button></div>
 
 <section id="contents" class="nobreak">
   <div class="sec-head"><h2>Contents</h2><span class="tag">Tap any line to jump</span></div>
@@ -966,6 +975,19 @@ footer{margin-top:56px;padding-top:16px;border-top:2px solid var(--ink);color:va
   function spy(){var y=window.innerHeight*0.3,best=null;secs.forEach(function(s){if(s.getBoundingClientRect().top<=y)best=s.id});setActive(best||secs[0].id)}
   var ticking=false;window.addEventListener('scroll',function(){if(!ticking){ticking=true;requestAnimationFrame(function(){spy();ticking=false})}},{passive:true});
   spy();
+
+
+  // light / dark switch
+  var root=document.documentElement,KEY='primer-theme';
+  function effective(){var t=root.getAttribute('data-theme');if(t==='dark'||t==='light')return t;return window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}
+  function paint(){var dark=effective()==='dark';document.querySelectorAll('.theme-btn').forEach(function(b){
+    b.classList.toggle('to-dark',!dark);b.querySelector('.theme-txt').textContent=dark?'Light mode':'Dark mode';
+    b.setAttribute('aria-label',dark?'Switch to light mode':'Switch to dark mode');b.setAttribute('aria-pressed',dark?'true':'false')})}
+  try{var saved=localStorage.getItem(KEY);if(saved==='dark'||saved==='light')root.setAttribute('data-theme',saved)}catch(e){}
+  document.querySelectorAll('.theme-btn').forEach(function(b){b.addEventListener('click',function(){
+    var next=effective()==='dark'?'light':'dark';root.setAttribute('data-theme',next);try{localStorage.setItem(KEY,next)}catch(e){}paint()})});
+  if(window.matchMedia){try{matchMedia('(prefers-color-scheme: dark)').addEventListener('change',paint)}catch(e){}}
+  paint();
 
   // copy
   document.querySelectorAll('[data-copy]').forEach(function(b){b.addEventListener('click',function(){
