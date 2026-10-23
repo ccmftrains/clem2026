@@ -113,6 +113,10 @@ tbody tr:last-child td,tbody tr:last-child th{border-bottom:0}
 .filters button[aria-pressed="true"]{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
 .daynav{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:8px}
 .daynav a.today{border-color:var(--flag);color:var(--flag)}
+.cal-add{display:flex;flex-wrap:wrap;align-items:center;gap:6px 12px;margin-top:12px}
+.cal-link{display:inline-flex;align-items:center;gap:8px;font:600 var(--t-small) var(--display);text-transform:uppercase;letter-spacing:.04em;padding:6px 12px;border-radius:3px;border:1px solid var(--accent);color:var(--accent);background:var(--card);text-decoration:none}
+.cal-link:hover{background:var(--accent);color:var(--accent-ink)}
+.cal-link svg{width:1.1em;height:1.1em;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
 .day{margin-top:26px;scroll-margin-top:64px}
 .day-h{display:flex;align-items:baseline;gap:12px;padding-bottom:6px;border-bottom:2px solid var(--ink)}
 
@@ -184,7 +188,7 @@ footer{margin-top:56px;padding-top:16px;border-top:2px solid var(--ink);color:va
   html{font-size:10.5pt}
   body{line-height:1.45}
   .wrap{max-width:none;padding:0}
-  .bar,.filters,.daynav,.copy,.screen-only{display:none!important}
+  .bar,.filters,.daynav,.cal-add,.copy,.screen-only{display:none!important}
   section{padding-top:0;break-before:page}
   section.nobreak{break-before:auto;padding-top:28px}
   .mast{padding-top:0}
@@ -400,6 +404,7 @@ footer{margin-top:56px;padding-top:16px;border-top:2px solid var(--ink);color:va
     <button type="button" aria-pressed="false" data-f="away">Off the grounds</button>
   </div>
   <p class="small muted">Labels: <span class="k k-show">Show</span> fair hours · <span class="k k-talk">Seminar</span> · <span class="k k-meet">Meeting</span> · <span class="k k-social">Social</span> · <span class="k k-away">Off-site</span> (not run by TCA unless noted)</p>
+  <p class="cal-add"><a class="cal-link" href="york-fall-2026.ics" type="text/calendar"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4.5" width="18" height="16" rx="2"/><path d="M3 9.5h18M8 2.5v4M16 2.5v4M12 12.5v5M9.5 15h5"/></svg>Add the schedule to your calendar</a><span class="small muted">One .ics file with every event above. Works with Apple, Google and Outlook calendars.</span></p>
 
   <div class="day" id="mon" data-date="2026-10-19">
     <div class="day-h"><h3>Monday</h3><span class="sub">October 19 · Pre-Show setup</span></div>
